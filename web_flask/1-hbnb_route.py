@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
 Script that starts a Flask web app:
+ Routes:
+  /: display “Hello HBNB!”
+  /hbnb: display “HBNB”
 """
 from flask import Flask
 
@@ -12,10 +15,12 @@ def hello_hbnb():
     """display Hello HBNB!"""
     return 'Hello HBNB!'
 
+
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """display HBNB!"""
     return 'HBNB'
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
